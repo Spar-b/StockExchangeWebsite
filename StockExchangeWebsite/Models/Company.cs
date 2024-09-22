@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using StockExchangeWebsite.Data.Enums;
 
 namespace StockExchangeWebsite.Models
@@ -7,8 +9,6 @@ namespace StockExchangeWebsite.Models
     {
         [Key]
         public int Id { get; set; }
-        public int TickerId { get; set; }
-        public string Name { get; set; }
         public double Value { get; set; }
         public string LogoURL { get; set; }
         public int NumWorkers { get; set; }
@@ -18,5 +18,9 @@ namespace StockExchangeWebsite.Models
         public Sector Sector { get; set; }
         public string Description { get; set; }
 
+        //Relations
+        public int TickerId { get; set; }
+        [ForeignKey("TickerId")]
+        public Ticker Ticker { get; set; }
     }
 }
