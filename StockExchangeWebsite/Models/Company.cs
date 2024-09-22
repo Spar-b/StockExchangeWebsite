@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using StockExchangeWebsite.Data.Enums;
 
 namespace StockExchangeWebsite.Models
 {
@@ -9,10 +10,12 @@ namespace StockExchangeWebsite.Models
         public int TickerId { get; set; }
         public string Name { get; set; }
         public double Value { get; set; }
+        public string LogoURL { get; set; }
         public int NumWorkers { get; set; }
         public string ContactPhone {  get; set; }
         public DateOnly FoundationDate { get; set; }
         public string RegistrationAddress {  get; set; }
+        public Sector Sector { get; set; }
         public string Description { get; set; }
 
     }
