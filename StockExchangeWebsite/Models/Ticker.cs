@@ -15,7 +15,6 @@ namespace StockExchangeWebsite.Models
 
         //Relations
         public int CompanyId { get; set; }
-        [ForeignKey("CompanyId")]
         public Company Company { get; set; }
 
         public List<StockMarketTicker> StockMarketTickers { get; set; }

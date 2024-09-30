@@ -20,7 +20,6 @@ namespace StockExchangeWebsite.Models
 
         //Relations
         public int TickerId { get; set; }
-        [ForeignKey("TickerId")]
         public Ticker Ticker { get; set; }
     }
 }

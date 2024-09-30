@@ -17,6 +17,8 @@ namespace StockExchangeWebsite.Data.AppDbContext
                 smt.TickerId
             });
 
+            modelBuilder.Entity<Company>().HasOne(c => c.Ticker).WithOne(t => t.Company).HasForeignKey<Company>(c => c.TickerId);
+            modelBuilder.Entity<Ticker>().HasOne(t => t.Company).WithOne(c => c.Ticker).HasForeignKey<Ticker>(t => t.CompanyId);
             modelBuilder.Entity<StockMarketTicker>().HasOne(sm => sm.StockMarket).WithMany(smt => smt.StockMarketTickers).HasForeignKey(sm => sm.StockMarketId);
             modelBuilder.Entity<StockMarketTicker>().HasOne(t => t.Ticker).WithMany(smt => smt.StockMarketTickers).HasForeignKey(t => t.TickerId);
 
