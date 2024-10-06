@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StockExchangeWebsite.Data.AppDbContext;
 
@@ -11,9 +12,11 @@ using StockExchangeWebsite.Data.AppDbContext;
 namespace StockExchangeWebsite.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240930085056_UsersAdded")]
+    partial class UsersAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +58,7 @@ namespace StockExchangeWebsite.Migrations
                     b.Property<int>("Sector")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TickerId")
+                    b.Property<int>("TickerId")
                         .HasColumnType("int");
 
                     b.Property<double>("Value")
@@ -227,9 +230,6 @@ namespace StockExchangeWebsite.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TickerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
                     b.HasKey("UserId", "TickerId");

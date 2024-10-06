@@ -18,5 +18,6 @@ namespace StockExchangeWebsite.Models
         public Company Company { get; set; }
 
         public List<StockMarketTicker> StockMarketTickers { get; set; }
+        public List<UserTicker> UserTickers { get; set; }
     }
 }

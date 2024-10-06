@@ -19,7 +19,7 @@ namespace StockExchangeWebsite.Models
         public string Description { get; set; }
 
         //Relations
-        public int TickerId { get; set; }
+        public int? TickerId { get; set; }
         public Ticker Ticker { get; set; }
     }
 }
